@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <div id="app">
+      <h1>Facepunch User Card Sandbox</h1>
+
+      <div>
+        <div class="post">
+          <div class="postmain">
+            <div class="postrender">
+              <div class="posthead">
+                <span><strong>4 hours ago</strong> from <strong>United States</strong></span>
+              </div>
+              <div class="postinner">
+                <div class="postuser">
+                  <div class="background-image" ref="bg_img" v-bind:style="{backgroundImage: bg}"></div>
+                  <div class="user-card" v-bind:style="{backgroundImage: bg}">
+                    <div class="user-card-header">
+                      <div class="inner">
+                        {{username}}
+                        <span class="userlevel">69</span>
+                      </div>
+                    </div>
+                    <div class="user-card-toolbar">
+                        <span class="user-card-toolbar-text">01 Jan 2018<strong class="user-card-toolbar-header">joined</strong></span>
+                        <span class="user-card-toolbar-text">20<strong class="user-card-toolbar-header">threads</strong></span>
+                        <span class="user-card-toolbar-text">40<strong class="user-card-toolbar-header">posts</strong></span>
+
+                    </div>
+                  </div>
+                  <div class="posterinfo">
+                    <div class="username" v-bind:style="{color: gold ? '#a92' : '#2c7dbd'}">
+                      {{username}}
+                      <span class="userlevel">69</span>
+                    </div>
+                    <div class="postavatar">
+                      <img v-bind:style="{maxWidth: w, maxHeight: h}" v-bind:src="ava"></img>
+                    </div>
+                  </div>
+                </div>
+                <div class="postcontent">
+                  <div class="posttext">
+                    Welcome to the (Unofficial) Facepunch User Card Sandbox!
+                    <br><br>
+                    Below you can edit your preview settings. Hover over your avatar to see the user card expand!
+                    <br><br>
+                    You can upload images from the web by pasting the URL into the file selection screen.
+                    <br><br>
+                    <span style="color: red">Obviously use at your own risk, this editor may not properly represent the the actual forum in all cases.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h1>Settings</h1>
+          <div>
+            Username: <input v-model="username"  />
+          </div>
+          <br />
+          <div>
+            Background image: <input type="file" @change="updateBackground($event)" />
+          </div>
+          <br />
+          <div>
+            Avatar image: <input type="file" @change="updateAvatar($event)" />
+          </div>
+          <br />
+          <div>
+            Max width: <input style="width:50px" v-model="w"  /> Max height: <input style="width:50px" v-model="h" />
+          </div>
+          <br />
+          <div>
+            Gold member: <input type="checkbox" v-model="gold"  />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

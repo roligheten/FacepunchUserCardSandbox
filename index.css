@@ -1,0 +1,229 @@
+html {
+  background-color: #cccbc6;
+  font-size: 16px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  min-width: 300px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  color: #555;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  font-family: "Roboto";
+}
+
+span {
+  font-style: inherit;
+  font-weight: inherit;
+}
+
+#app {
+  max-width: 1376px;
+  margin: 0 auto;
+}
+
+.post {
+  margin: 0;
+  border-bottom: 1px solid #bbb;
+  display: flex;
+  list-style: none !important;
+  background-color: #fff;
+  border: none;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+.postmain {
+    flex-grow: 1;
+    flex-shrink: 1;
+    position: relative;
+    border-bottom: 1px solid #bbb;
+}
+
+.postrender {
+  box-sizing: inherit;
+}
+
+.posthead {
+  margin: 0;
+  padding: 0.3rem 0.6rem;
+  height: auto;
+  font-size: 0.7rem;
+  color: rgba(85,85,85,0.5);
+  background-color: #e6e6e6;
+  border-bottom: 1px solid #bbb;
+}
+
+.posthead strong {
+  color: rgba(85,85,85,0.8);
+  font-weight: normal;
+}
+
+.postinner {
+  display: flex;
+}
+
+.postuser {
+  flex-basis: 200px;
+  max-width: 200px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  padding: 0.5rem;
+  border-right: 1px solid #bbb;
+  box-sizing: border-box;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.background-image {
+  z-index: 0;
+  background-position: top center;
+  background-position-y: -16px;
+  background-repeat: repeat;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+}
+
+.background-image::after {
+  content: '';
+  backdrop-filter: grayscale(70%);
+  background: linear-gradient(to bottom, rgba(255,255,255,0.8), #fff 496px);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+}
+
+.postcontent {
+  background: linear-gradient(to right, #e6e6e640, #fff 512px);
+  flex-grow: 1;
+}
+
+.posttext {
+  min-height: 270px;
+  padding: 2rem;
+  color: #555;
+  font-size: 13.3333px;
+  line-height: 1.3 !important;
+  font-family: "Roboto";
+}
+
+.user-card {
+  position: absolute;
+  border: none;
+  box-shadow: 2px 2px 16px rgba(0,0,0,0.2);
+  width: 200px;
+  height: 512px;
+  z-index: 10;
+  background-color: #fff;
+  background-position: top center;
+  background-repeat: repeat;
+  left: 0;
+  top: 0px;
+  opacity: 0.0;
+  transition: all ease-in 0.2s;
+  pointer-events: none;
+  padding-top: 0px;
+  overflow: hidden;
+  top: -16px;
+  padding-top: 16px;
+  left: -29px;
+  width: 256px;
+  box-sizing: border-box;
+}
+
+.user-card-header {
+  padding: 0 !important;
+  padding-left: 29px !important;
+  padding-right: 28px !important;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 1.0rem;
+  backdrop-filter: blur(4px);
+  background-color: rgba(34,34,34,0.3);
+}
+
+.inner {
+  padding: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  transition: all linear 0.3s;
+  color: #fff;
+}
+
+.userlevel {
+  display: inline-block;
+  font-size: 0.5rem;
+  border-radius: 3px;
+  padding: 1px 4px;
+  position: relative;
+  top: -5px;
+  left: 5px;
+  color: rgba(255,255,255,0.4);
+  background-color: rgba(0,0,0,0.4);
+  color: #c7e6ff;
+  background-color: #2196F3;
+}
+
+.user-card-toolbar {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  background-color: rgba(34,34,34,0.3);
+  font-size: 10px;
+  display: flex;
+  backdrop-filter: blur(4px);
+}
+
+.user-card-toolbar-text {
+  color: #fff;
+  flex-grow: 1;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.user-card-toolbar-header {
+  display: block;
+  opacity: 0.5;
+}
+
+.postuser:hover .user-card {
+  display: block;
+  opacity: 1.0;
+  pointer-events: all;
+  transition: all ease-out 0.3s;
+}
+
+.posterinfo {
+  padding-bottom: 1rem;
+  z-index: 3;
+  position: relative;
+}
+
+.postavatar {
+  margin-top: 1rem;
+  text-align: center;
+  line-height: 0;
+}
+
+.username {
+  padding: 1.0rem;
+  font-weight: bold;
+}
